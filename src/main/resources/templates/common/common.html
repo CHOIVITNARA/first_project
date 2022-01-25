@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/">
+	<head th:fragment="head">
+		<meta charset="UTF-8">
+		<title>하나투어 : 꿈꾸는 대로, 펼쳐지다</title>
+		<link rel="stylesheet" href="/css/common.css"/>
+		<link rel="stylesheet" href="/css/index.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="text/javascript">
+		$(function(){
+				$("#menu-btn-open").click(function(open_top_menu){
+					$(".all-menu-hidden").show();
+					$("#menu-btn-close").show();
+					$("#menu-btn-open").hide();
+				});
+				$("#hidden-close").click(function(close_top_menu){
+					$(".all-menu-hidden").hide();
+					$("#menu-btn-close").hide();
+					$("#menu-btn-open").show();
+				});
+				$("#menu-btn-close").click(function(open_top_menu){
+					$(".all-menu-hidden").hide();
+					$("#menu-btn-close").hide();
+					$("#menu-btn-open").show();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header th:fragment="header">
+			<h1>헤더영역</h1>
+			<div class="wrap center">
+				<section id="top-top" class="view-size">
+					<div class="wrap flex end">
+						<div>
+							<a href="/log/page">로그인</a>				
+						</div>
+						<div>
+							<a href="/log/join" class="top-margin">회원가입</a>
+						</div>
+						<div>
+							<a href="/" class="top-margin">고객센터</a>
+						</div>
+					</div>
+				</section>
+				<section class="logo-menu flex view-size" >
+					<div>
+						<a href="/"></a>
+					</div>
+					<div class="wrap flex between">
+						<ul class="flex logo-front">
+							<li>
+								<input type="text" placeholder="검색어를 입력해 주세요">
+								<a href="#">
+									<span class="material-icons md-25">search</span>
+								</a>
+							</li>
+							<li>
+								<span>인기검색어</span>
+							</li>
+						</ul>
+						<ul class="flex logo-back">
+							<li>
+								<a href="#" >
+								<img src="/img/common/top-icon-1.png">
+								마이메뉴
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<img src="/img/common/top-icon-2.png">
+								예약내역
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="/img/common/top-icon-3.png">
+									찜
+								</a>			
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<div class="flex between main-menu view-size">
+						<div class="flex">
+							<div class="flex all-menu">
+								<div class="menu-btn-oc flex">
+									<div id="menu-btn-open">
+										<a href="#" class="flex">
+											<span>전체메뉴</span>
+										</a>
+									</div>
+									<div id="menu-btn-close">
+										<a href="#" class="flex">
+											<span>전체메뉴</span>
+										</a>
+									</div>
+								</div>
+								<div hidden class="all-menu-hidden">
+									<div class="flex">
+										<a href="#" id="hidden-close">닫기</a>
+										<div>
+											<dl>
+												<dt>
+													<a href="#">해외여행</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#">테마여행</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">허니문</a>
+														</li>
+														<li>
+															<a href="#">골프</a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<dl>
+												<dt>
+													<a href="#">제주/국내여행</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">제주/국내여행</a>
+														</li>
+														<li>
+															<a href="#">제주렌터카</a>
+														</li>
+														<li>
+															<a href="#">기차예약</a>
+														</li>
+														<li>
+															<a href="#">국내골프</a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#">국내 단독여행문의</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<dl>
+												<dt>
+													<a href="#">항공</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">항공예약</a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#">투어/입장권</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<dl>
+												<dt>
+													<a href="#">호텔/펜션</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">호텔예약</a>
+														</li>
+														<li>
+															<a href="#">펜션/풀빌라예약</a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#">럭셔리여행</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<dl>
+												<dt>
+													<a href="#">연계서비스</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">전문가 여행기</a>
+														</li>
+														<li>
+															<a href="#">하나투어상품권</a>
+														</li>
+														<li>
+															<a href="#">포켓와이파이</a>
+														</li>
+														<li>
+															<a href="#">안심여행지원</a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#">혜택/이벤트</a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">제휴혜택</a>
+														</li>
+														<li>
+															<a href="#">마일리지 클럽</a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<dl>
+												<dt>
+													<a href="#"></a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">하나트래비즈(기업은행)</a>
+														</li>
+														<li>
+															<a href="#">하나투어비자센터</a>
+														</li>
+														<li>
+															<a href="#">해외여행자보험</a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+														<li>
+															<a href="#"></a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+											<dl>
+												<dt>
+													<a href="#"></a>
+												</dt>
+												<dd>
+													<ul>
+														<li>
+															<a href="#">여행기획전</a>
+														</li>
+														<li>
+															<a href="#">이벤트</a>
+														</li>
+													</ul>
+												</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="flex">
+								<li>
+									<a href="#">해외여행</a>
+								</li>
+								<li>
+									<a href="#">제주/국내여행</a>
+								</li>
+								<li>
+									<a href="#">항공</a>
+								</li>
+								<li>
+									<a href="#">호텔/펜션</a>
+								</li>
+								<li>
+									<a href="#">투어/입장권</a>
+								</li>
+								<li>
+									<a href="#">테마여행</a>
+								</li>
+								<li>
+									<a href="#">럭셔리여행</a>
+								</li>
+								<li>
+									<a href="#">하나LIVE</a>
+								</li>
+							</ul>				
+						</div>
+						<div>
+							<ul class="flex a-list">
+								<li>
+									<a href="#">여행기획전</a>
+								</li>
+								<li>
+									<a href="http://www.hanatrabiz.com/">기업여행</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</header>
+		<main>
+		
+		</main>
+		<footer th:fragment="footer">
+			<h1>푸터영역</h1>
+			<div div class="wrap">
+				<section id="f-top">
+					<div class="wrap flex view-size between">
+						<ul class="flex">
+							<li>공지</li>
+							<li>
+								<a href="#"><하나LIVE> 21년 12월 29일 방송 이벤트 당첨자 안내 (스타벅스 기프티콘)</a>
+							</li>
+							<li class="end">
+								<a  href="#" >더보기</a>
+							</li>
+						</ul>
+						<ul class="flex">
+							<a href="#">
+								<img src="/img/common/facebook.png">
+							</a>
+							<a href="#">
+								<img src="/img/common/instagram.png">
+							</a>
+							<a href="#">
+								<img src="/img/common/naverblog.png">
+							</a>
+							<a href="#">
+								<img src="/img/common/kakaoplus.png">
+							</a>
+							<a href="#">
+								<img src="/img/common/youtube.png">
+							</a>
+							<a href="#">
+								<img src="/img/common/kakaostory.png">
+							</a>
+						</ul>
+					</div>
+				</section>
+				<section id="f-middle">
+					<div class="wrap view-size">
+						<div class="flex between">
+							<div>
+								<div>
+									<ul class="flex f-menu">
+										<li>
+											<a href="#">회사소개</a>
+										</li>
+										<li>
+											<a href="#">이용약관</a>
+										</li>
+										<li>
+											<a href="#"><strong>개인정보처리방침</strong></a>
+										</li>
+										<li>
+											<a href="#">여행약관</a>
+										</li>
+										<li>
+											<a href="#">해외여행자보험</a>
+										</li>
+										<li>
+											<a href="#">마케팅제휴</a>
+										</li>
+										<li>
+											<a href="#">공식인증예약센터 검색</a>
+										</li>
+									</ul>
+								</div>
+								<div class="f-speinfo">
+									<ul class="flex">
+										<li><strong>(주)하나투어</strong></li>
+										<li>대표 : 김진국, 송미선</li>
+										<li>주소 : (03161) 서울특별시 종로구 인사동 5길 41</li>
+									</ul>
+									<ul class="flex">
+										<li>사업자등록번호 : 102-81-39440</li>
+										<li>
+											<a href="http://www.ftc.go.kr/www/bizCommList.do?key=232">사업자정보확인</a>
+										<li>통신판매업신고번호 : 종로01-1806호관광사업자</li>
+										<li>등록번호 : 제1993-000006호</li>
+									</ul>
+									<ul class="flex">
+										<li>개인정보 보호책임자 : 채철훈</li>
+										<li>영업보증보험 : 22억 1천만원</li>
+										<li>가입팩스: 02-734-0392</li>
+										<li>이메일 : 15771233@hanatour.com</li>
+										<li class="flex">
+											<span class="material-icons md-18">headphones</span>
+											<span>고객센터</span>
+											<span>1577-1233</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hana flex end">
+								<ul>
+									<li>하나은행 구매안전 서비스</li>
+									<li>
+										<span>고객님은 안전거래를 위해 현금으로 결제시<br>(주)하나투어에서 가입한 하나은행으로<br>구매안전서비스를 이용하실 수 있습니다.</span>
+									</li>
+									<li>
+										<a>서비스 가입사실 확인</a>
+									</li>
+								</ul>
+							</div>
+						</div>	
+					</div>
+					<div class="view-size automargin">
+						<div class="copyright">
+							<p>
+							※ 부득이한 사정에 의해 여행일정이 변경되는 경우 사전 동의를 받습니다.<br>
+							※ 하나투어는 개별 항공권 단독 판매에 대하여 통신판매중개자로서 통신판매의 당사자가 아니며 해당상품의 거래정보 및 거래등에 대해 책임을 지지 않습니다.
+							</p>
+						</div>
+						<div class="copyright">
+							<p>COPYRIGHT ⓒ HANATOUR SERVICE INC. ALL RIGHTS RESERVED</p>
+						</div>
+					</div>
+				</section>
+				<section id="f-bottom">
+					<div class=" wrap view-size flex between">
+						<ul class="flex">
+							<li class="flex">
+								<img src="/img/common/f-bottom/f-bottom-award-logo-01.png"/>
+								<span>대한민국<br>100대 브랜드</span>
+							</li>
+							<li class="flex">
+								<img src="/img/common/f-bottom/f-bottom-award-logo-02.png"/>
+								<span>한국능률협회선정<br>15년연속(2005~2019)<br>브랜드파워 1위</span>
+							</li>
+							<li class="flex">
+								<img src="/img/common/f-bottom/f-bottom-award-logo-03.png"/>
+								<span>브랜드스톡선정<br>5년연속(2005~2019)<br>브랜드스타 1위</span>
+							</li>
+							<li class="flex">
+								<img src="/img/common/f-bottom/f-bottom-award-logo-04.png"/>
+								<span>KMAC 선정<br>11년 연속(2009~2019)<br>한국산업의 고객만족도 여행사부문1위</span>
+							</li>
+							<li class="flex">
+								<img src="/img/common/f-bottom/f-bottom-award-logo-05.png"/>
+								<span>로고국가고객만족도(NCSI)<br>여행사 서비스업 부문 6년 연속 1위</span>
+							</li>
+						</ul>
+						<ul class="flex">
+							<li>
+								<a href="#">
+									<img src="/img/common/f-bottom/mark_01.png">
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="/img/common/f-bottom/mark_02.png">
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="/img/common/f-bottom/mark_03.png">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</footer>
+	</body>
+</html>

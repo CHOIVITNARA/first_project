@@ -1,0 +1,167 @@
+@charset "UTF-8";
+.input{
+	width: 470px;
+	height: 52px;
+	padding: 0 15px;
+	border: 1px solid #cdcdcd;
+}
+.button{
+	width: 500px;
+	height: 56px;
+	padding: 0 35px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	background-color: #5b606e;
+	color: white;
+	border: solid 1px #5b606e;
+	
+}
+.button:hover{
+	opacity: 0.6;
+}
+main>.wrap>div{
+	min-height: 350px;
+	margin-top: 50px;
+}
+#loginForm>div:first-child strong{
+	font-size: 32px;
+}
+#loginForm>div:nth-of-type(2){
+	margin: 0 auto;
+}
+#id-save-label{
+	font-size: 14px;
+	line-height: 28px;
+}
+.checkbox{
+	display: none;
+}
+.memberType{
+	font-weight: 600px;
+	width: 500px;
+	height: 57px;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	
+}
+.memberType ul{
+	border: 1px solid #cdcdcd;
+	border-bottom: none;
+	
+}
+.memberType>ul>li{
+	width: 50%;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+	height: 57px;
+}
+.memberType>ul>li:first-child{
+	border-bottom: none;
+}
+.memberType>ul>li a{
+	display: block;
+	height: 36px;
+	width: 100%;
+	padding-top: 21px;
+}
+.choice{
+	border: 1px solid #111111;
+	border-bottom: none;
+	color: #5e2bb8;
+}
+.non-choice{
+	border-bottom: 1px solid #111111;
+	color: #333;
+	font-weight: 400;	
+}
+.login-form>form>ul>li:not(:first-child){
+	margin-top: 12px;
+}
+.login-form form ul li input[type="checkbox"]{
+	position:absolute; 
+	width:1px; 
+	height:1px; 
+	padding:0; 
+	margin:-1px; 
+	overflow:hidden; 
+	clip:rect(0,0,0,0); 
+	border:0;
+
+}
+.login-form form ul li input[type="checkbox"]{display: none; position: absolute;}
+.login-form form ul li input[type="checkbox"]{
+	display:inline-block; 
+	width:24px;
+	height:24px;
+	cursor:pointer;
+	background-size: 100% auto;
+	background: url('/img/log/ico_check.png') 0 0 no-repeat;
+}
+.login-form form ul li input[type="checkbox"]:checked{
+	background-image: url('/img/log/ico_check_after.png') ;
+	background-size: cover;
+}
+.login-form form ul li select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 140px;
+  height: 52px;
+  padding: 0 30px 0 15px;
+  position: relative;
+}
+.login-form form ul li select::after{
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: 10px;
+	height: 6px;
+	top: -5px;
+	left: 0;
+	background-image: url('/img/log/spr_com.png')
+}
+.login-form form ul li:nth-of-type(3) input{
+	height: 48px; 
+	padding: 0 15px;
+	width: 318px;
+	margin-left: 8px;
+}
+/* ///////////////////로그인하단공통////////////////// */
+.login-bottom a{
+	font-size: 13px;
+	line-height: 1;
+	position: relative;
+	color: #333;
+}
+.login-bottom span::before{
+	position: inline-block;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background-color: #ccc;
+	position: absolute;
+	top: 50%;
+	margin-top: -2px;
+	content: '';
+}
+.login-bottom span{
+	position: inline-block;
+	padding-left: 9px;
+	min-height: 13px;
+	margin-left: 5px;
+	text-align: center;
+	font-size: 13px;
+}
+.social-login{
+	margin-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #cdcdcd;
+	text-align: center;
+}
+.social-login>a{
+	display: inline-block;
+	margin: 0 10px;
+	height: 42px;
+	width: 42px;
+}

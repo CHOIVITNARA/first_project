@@ -1,0 +1,24 @@
+@charset "UTF-8";
+h1{position:absolute; left:-9999px}
+ul, li{list-style:none; color: #333;}
+*{margin: 0; padding: 0; box-sizing:board-box;}
+a{text-decoration: none; color: #333;}
+span{color: #333333;}
+body{font-family: 'Noto Sans KR', sans-serif, system-ui;}
+input{outline: 0;}
+
+
+.cmargin{margin: auto 0;}
+.automargin{margin: 0 auto;}
+.flex{display:flex;}
+.center{justify-content: center}
+.between{justify-content: space-between}
+.around{justify-content: space-around}
+.start{justify-content: flex-start}
+.end{justify-content: flex-end}
+.column{flex-direction: column;}
+.row{flex-direction: row;}
+.view-size{width:1200px; height: 100%; margin: 0 auto;}
+select::-ms-expand {
+  display: none;
+}

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+.a{
+	display: block;
+	width: 330px;
+	height: 56px;
+	border-radius: 4px;
+}
+
+main>.wrap>div {
+	margin-top: 50px; 
+}
+.joinHello{
+	margin-bottom: 50px; 
+}
+.joinHello div:first-child{
+	align-self: center;
+}
+.joinHello strong{
+	font-size: 46px;
+	line-height: normal;
+	font-weight: 600px;
+}
+.joinChoice div div{
+	align-self: center;
+}
+.joinChoice div div:last-child{
+	margin-top: 20px;
+}
+.joinChoice div div>p{
+	font-size: 15px;
+	color: #666;
+	text-align: center;
+	line-height: 23px;
+}
+.innerChoice{
+	width: 920px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 5px 7px 0 rgb(0 0 0 / 5%);
+}
+.innerDetail{	
+	width: 100%;	
+	margin: 50px 65px;
+}
+.innerDetail>div{
+	text-align: center;
+}
+.innerDetail>div strong{
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 23px;	
+}
+.innerDetail>div>div:nth-of-type(1){
+	margin-top: 40px;
+}
+.innerDetail>div>div:nth-of-type(2){
+	margin-top: 30px;
+}
+.innerDetailR{
+	padding-right: 64px;
+}
+.innerDetailR div a{
+	line-height: 60px;
+	font-size: 17px;
+	background-color: #5e2bb8;
+	border: solid 1px #5e2bb8;
+	color: #fff;
+	margin-top: 10px;
+}
+.innerDetailR ul{
+	margin-top: 36px;
+}
+.innerDetailR ul li::before{
+	background-image: url('/img/log/spr_signup.png');
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	display: inline-block;
+	content: '';
+	top: 0;
+	left: 32%;
+}
+.innerDetailR ul li:nth-of-type(2)::before{
+	background-position: -45px 0;
+}
+.innerDetailR ul li:nth-of-type(3)::before{
+	background-position: -90px 0;
+}
+.innerDetailR ul li{
+	width: 33.3%;
+	padding-top: 45px;
+	position: relative;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+}
+.innerDetailL{
+	padding-left: 64px;
+}
+.innerDetailL>div a{
+	margin-top: 10px;
+	border: solid 1px #c2c2c2;
+	font-weight: 400px;
+	font-size: 17px;
+	padding: 0;
+	position: relative;
+	color: #333;
+	text-align: left;
+}
+.innerDetailL>div a span{
+	position: relative;
+	padding-left: 49px;
+	width: 250px;
+	line-height: 60px;
+	margin-left: 40px;
+}
+.innerDetailL>div a span::before{
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: -5px;
+	left: 0;
+	background-image: url('/img/log/spr_com.png')
+}
+.innerDetailL>div a:first-child span::before{
+	background-position: -300px 0;
+}
+.innerDetailL>div a:nth-child(2) span::before{
+	background-position: -335px 0;
+}
+.innerDetailL>div a:nth-child(3) span::before{
+	background-position: -370px 0;
+}
+
+
+
+
+
+
+
+
+
+.innerChoice>div>div>div>div:first-child{
+	margin-top: 40px;
+}
+.innerChoice>div>div>div>strong{
+	
+}
+.innerChoice>div>div>div>div:nth-of-type(2) {
+	margin-top: 30px;
+	text-align: center;
+}
+.hana-member{
+	padding: 50px 64px 50px 64px;
+}
+.join-block a {
+	width: 330px;
+	height: 56px;
+	
+}
+join-block div:nth-of-type(2) ul li{
+	width: 85px;
+	font-size: 14px;
+}
+join-block div:nth-of-type(2) ul li div{
+	width: 40px;
+	height: 40px;
+	background-image: url('/img/log/spr_signup.png');
+	align-self: center;
+}
+.join-block div:nth-of-type(2) ul li:nth-of-type(2) div{
+	left: -40px;
+}

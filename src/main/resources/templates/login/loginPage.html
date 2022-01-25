@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/">
+<head>
+	<th:block th:insert="~{/common/common::head}"/>
+	<link rel="stylesheet" href="/css/login.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<th:block th:insert="~{/common/common::header}"/>	
+	</header>
+	<main>
+		<div class="wrap view-size">
+			<div class="flex center">
+				<div id="loginForm" class="center" >
+					<div class="flex center">
+						<strong>로그인</strong>
+					</div>
+			<!-- /////////////////회원/////////////// -->
+					<div>
+						<div>
+							<div>
+								<div class="memberType" >
+									<ul class="flex">
+										<li>
+											<a href="#" class="member choice">회원</a>
+										</li>
+										<li>
+											<a href="#" class="non-member non-choice">비회원 예약 조회</a>
+										</li>
+									</ul>
+								</div>
+								<div class="login-form">
+									<form>
+										<ul>
+											<li>
+												<input class="input" type="text" placeholder="아이디(이메일계정)">
+											</li>
+											<li>
+												<input class="input" type="password" placeholder="비밀번호">
+											</li>
+											<li class="id-pro">
+												<label for="id-save" id="id-save-label">
+													<input type="checkbox" id="id-save"class="checkbox"/>
+													<span>아이디 저장</span>
+												</label>
+											</li>
+											<li>
+												<button type="submit" class="button">로그인</button>
+											</li>
+											
+										</ul>
+									</form>
+								</div>
+				<!-- /////////////////비회원/////////////// -->
+								<div class="memberType">
+									<ul class="flex">
+										<li>
+											<a href="#" class="member non-choice">회원</a>
+										</li>
+										<li>
+											<a href="#" class="non-member choice">비회원 예약 조회</a>
+										</li>
+									</ul>
+								</div>
+								<div class="login-form">
+									<form >
+										<ul>
+											<li>
+												<input class="input" type="text" placeholder="이름">
+											</li>
+											<li>
+												<input class="input" type="text" placeholder="예약번호(영문, 숫자 포함 12자)">
+											</li>
+											<li>
+												<select name="">
+													<option>연락처</option>
+													<option>이메일</option>
+												</select><!-- 
+												 --><input type="text" placeholder="예약번호(영문, 숫자 포함 12자)">
+											</li>
+											<li>
+												<ul>
+													<li>※ 예약시 제공한 본인의 연락처 또는 이메일 정보를 입력해주시기 바랍니다.</li>
+													<li>※ 예약시 고객님의 연락처 또는 이메일을 입력하지 않은 경우, 공식인증예약센터로 전화 문의해 주시기 바랍니다.</li>
+												</ul>
+											</li>
+											<li>
+												<button type="submit" class="button">예약조회</button>
+											</li>
+										</ul>
+									</form>
+								</div>
+							</div>
+				<!-- /////////////////회원하단/////////////// -->			
+							<div class="login-bottom flex center">
+								<a href="#">아이디 찾기</a>
+								<span></span>
+								<a href="#">비밀번호 찾기</a>
+								<span></span>
+								<a href="/log/join">회원가입</a>
+							</div>
+							<div class="social-login center">
+								<a href="#" style="background-image: url('/img/log/ico_sns01.png')"></a>
+								<a href="#" style="background-image: url('/img/log/ico_sns02.png')"></a>
+								<a href="#" style="background-image: url('/img/log/ico_sns03.png')"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<th:block th:insert="~{/common/common::footer}"/>	
+	</footer>
+</body>
+</html>
