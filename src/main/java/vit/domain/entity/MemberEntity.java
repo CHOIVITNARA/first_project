@@ -21,17 +21,41 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-public class MemberlEntity extends BaseEntity{
+public class MemberEntity extends BaseEntity{
 	
 	@Id
-	String email;
+	private String email;
 	
 	@Column(nullable=false)
-	String password;
+	private String password;
 	@Column(nullable=false)
-	String name;
+	private String name;
+	@Column(nullable=true)
+	private String gender;
+	@Column(nullable=true)
+	private String phoneNumber;
+	@Column(nullable=true)
+	private String birth;
+	
+	@Column(nullable=true)
+	private boolean hanaAgree;
+	@Column(nullable=true)
+	private boolean personalAgree;
+	@Column(nullable=true)
+	private boolean personalOtherAgree;
+	@Column(nullable=true)
+	private boolean locationAgree;
+	@Column(nullable=true)
+	private boolean marcketingAgree;
+	@Column(nullable=true)
+	private boolean marcketingOtherAgree;
+	
+	private boolean isSocial;
+	
+	
 	
 	@Enumerated(EnumType.STRING)
+	@Builder.Default
 	@ElementCollection(fetch=FetchType.EAGER)
 	private Set<MemberRole> RoleSet=new HashSet<>();
 	

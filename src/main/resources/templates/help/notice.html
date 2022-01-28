@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<th:block th:insert="~{/common/common::head}"/>
+	<link rel="stylesheet" href="/css/join_1.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function autoEmail(value){
+			console.log(value)
+			$("#id-input").val(value);
+		};
+	</script>
+</head>
+<body>
+	<header>
+		<th:block th:insert="~{/common/common::header}"/>	
+	</header>
+	관리자 페이지입니다.
+	<footer>
+		<th:block th:insert="~{/common/common::footer}"/>	
+	</footer>
+</body>
+</html>

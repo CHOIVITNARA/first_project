@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MemberlEntityRepository extends JpaRepository<MemberlEntity, String>{
+public interface MemberEntityRepository extends JpaRepository<MemberEntity, String>{
 
 }

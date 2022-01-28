@@ -17,16 +17,22 @@ main>.wrap>div:first-child{
 	width: 435px;
 	padding-top: 50px;
 }
+.main-top>.wrap{
+	margin: 75px 0 35px;
+	position: relative;
+}
 .main-top>div p {
 	font-size: 26px;
-	margin: 75px 0 35px;
 	line-height: 34px;
+}
+.main-top>div>p{
+	position: absolute;
 }
 .main-top-right div ul{
 	width: 330px;
 }
 .main-top-right div ul li{
-	height: 25px;
+	height: 28px;
 	border-bottom: 1px solid #333;
 	width: 33.333333%;
 	text-align: center;
@@ -231,22 +237,62 @@ main>.wrap>div:first-child{
 	padding-top: 50px;
 	
 }
-.main-top-left div{
+.container{
 	width: 740px; 
 	height: 610px; 
 	position: relative; 
 	overflow: hidden;
 }
-.main-top-left div ul{
+.slides{
 	position: absolute; 
 	left: 0; 
 	top: 0; 
 	width: 5920px;
 }
-.main-top-left div ul li a{
+.main-top-left div>ul>li>a{
 	display: inline-block;
 	width: 740px;
 	height: 610px;
+}
+.img-con{
+	position: absolute;
+	top: 486px;
+	left: 84px;
+}
+.main-top-left div>a{
+	display: inline-block;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	z-index: 1;
+	background: none;
+	overflow: hidden;
+	border: 1px solid #fff;
+}
+.main-top-left div>a span:before{
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 16px;
+	background-image: url('/img/index/spr_com.png');
+	background-position: -404px -182px;
+	position: absolute;
+	top: 12px;
+	left: 13px;
+}
+.img-con>a:nth-child(2) span:before{
+	background-position: -416px -182px;
+}
+.img-con>a:nth-child(2){
+	border-left: none;
+	left: -5px;
+}
+.img-con>a:nth-child(3) span:before{
+	background-position: -430px -182px;
+}
+.img-con>a:nth-child(3){
+	border-left: none;
+	left: -10px;
 }
 /* /////////////////////////////두번째박스////////////////// */
 .main-sec-box{

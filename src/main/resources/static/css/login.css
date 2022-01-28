@@ -9,12 +9,43 @@
 	width: 500px;
 	height: 56px;
 	padding: 0 35px;
-	margin-bottom: 20px;
+	margin: 20px 0;
 	font-size: 17px;
 	background-color: #5b606e;
 	color: white;
 	border: solid 1px #5b606e;
-	
+	cursor: pointer;
+	border-radius: 4px;
+}
+.free-button{
+	width: 500px;
+	height: 56px;
+	padding: 0 35px;
+	margin: 20px 0;
+	font-size: 17px;
+	background-color: #5e2bb8;
+	color: white;
+	border: solid 1px #5e2bb8;
+	cursor: pointer;
+	border-radius: 4px;
+}
+checkbox{
+	display: none;
+}
+.p{
+	font-size: 13px;
+	color: #888;
+	padding-left: 15px;
+	position: relative;
+	line-height: 20px;
+}
+.p::before{	
+	content: '※';
+	display: inline-block;
+	margin-right: 3px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 .button:hover{
 	opacity: 0.6;
@@ -28,10 +59,14 @@ main>.wrap>div{
 }
 #loginForm>div:nth-of-type(2){
 	margin: 0 auto;
+	display: table-caption;
 }
 #id-save-label{
 	font-size: 14px;
 	line-height: 28px;
+}
+.show{
+	display:inline-block;
 }
 .checkbox{
 	display: none;
@@ -75,32 +110,30 @@ main>.wrap>div{
 	color: #333;
 	font-weight: 400;	
 }
-.login-form>form>ul>li:not(:first-child){
+.login-form>form>ul>li{
 	margin-top: 12px;
 }
-.login-form form ul li input[type="checkbox"]{
-	position:absolute; 
-	width:1px; 
-	height:1px; 
-	padding:0; 
-	margin:-1px; 
-	overflow:hidden; 
-	clip:rect(0,0,0,0); 
-	border:0;
-
+#id-save-label{
+	padding-left: 34px;
+	position: relative;
+	cursor: pointer;
 }
-.login-form form ul li input[type="checkbox"]{display: none; position: absolute;}
-.login-form form ul li input[type="checkbox"]{
-	display:inline-block; 
-	width:24px;
-	height:24px;
-	cursor:pointer;
+.id-pro label:before{
+	position: absolute;
+	display: inline-block; 
+	content: '';
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
 	background-size: 100% auto;
+	left: 1px;
 	background: url('/img/log/ico_check.png') 0 0 no-repeat;
 }
-.login-form form ul li input[type="checkbox"]:checked{
+.id-pro input:checked+label:before{
 	background-image: url('/img/log/ico_check_after.png') ;
-	background-size: cover;
+}
+.nomem-section{
+	display: none;
 }
 .login-form form ul li select {
   -webkit-appearance: none;
@@ -121,11 +154,42 @@ main>.wrap>div{
 	left: 0;
 	background-image: url('/img/log/spr_com.png')
 }
-.login-form form ul li:nth-of-type(3) input{
-	height: 48px; 
+.login-form>form>ul>li:nth-of-type(3)>input{
+	height: 50px; 
 	padding: 0 15px;
 	width: 318px;
-	margin-left: 8px;
+	margin-left: 7px;
+}
+#selectEmail{
+	display: none;
+}
+.non-member-choice label{
+	height: 24px;
+	padding-left: 34px;
+	color: #333;
+	line-height: 20px;
+	position: relative;
+}
+.non-member-choice label:before{
+	position: absolute;
+	display: inline-block; 
+	content: '';
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	background-size: 100% auto;
+	left: 0px;
+	top: -3px;
+	background: url('/img/log/ico_radio.png') 0 0 no-repeat;
+}
+.non-member-choice input:checked+label:before{
+	background-image: url('/img/log/ico_radio_checked.png') ;
+}
+.non-member-choice label:not(:nth-of-type(1)){
+	margin-left: 20px;
+}
+#otherForm{
+	display: none;
 }
 /* ///////////////////로그인하단공통////////////////// */
 .login-bottom a{
@@ -134,7 +198,7 @@ main>.wrap>div{
 	position: relative;
 	color: #333;
 }
-.login-bottom span::before{
+.login-bottom a span::before{
 	position: inline-block;
 	width: 3px;
 	height: 3px;
@@ -142,6 +206,7 @@ main>.wrap>div{
 	background-color: #ccc;
 	position: absolute;
 	top: 50%;
+	left: 5px;
 	margin-top: -2px;
 	content: '';
 }

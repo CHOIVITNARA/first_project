@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org/">
+<html xmlns="http://www.thymeleaf.org/"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<head th:fragment="head">
 		<meta charset="UTF-8">
 		<title>하나투어 : 꿈꾸는 대로, 펼쳐지다</title>
@@ -36,14 +37,20 @@
 			<div class="wrap center">
 				<section id="top-top" class="view-size">
 					<div class="wrap flex end">
-						<div>
+						<div sec:authorize="isAnonymous()">
 							<a href="/log/page">로그인</a>				
 						</div>
-						<div>
+						<div sec:authorize="isAnonymous()">
 							<a href="/log/join" class="top-margin">회원가입</a>
 						</div>
+						<div sec:authorize="isAuthenticated()">
+							<a href="/log/logout" class="top-margin">로그아웃</a>
+						</div>
 						<div>
-							<a href="/" class="top-margin">고객센터</a>
+							<a href="/help" class="top-margin">고객센터</a>
+						</div>
+						<div sec:authorize="hasRole('Role_ADMIN')">
+							<a href="/admin" class="top-margin">관리자페이지</a>
 						</div>
 					</div>
 				</section>

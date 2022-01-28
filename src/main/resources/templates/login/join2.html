@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/">
+<head>
+	<th:block th:insert="~{/common/common::head}"/>
+	<link rel="stylesheet" href="/css/join_1.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function autoEmail(value){
+			console.log(value)
+			$("#id-input").val(value);
+		};
+	</script>
+</head>
+<body>
+	<header>
+		<th:block th:insert="~{/common/common::header}"/>	
+	</header>
+	<main>
+		<div class="wrap view-size flex center">
+			<div class="flex center">
+				<div class="joinChoice center" >
+					<div class="flex center column joinHello">
+						<div>
+						</div>
+						<div>
+							<strong>하나투어 회원가입을 위한 고객님의 소중한 정보를 입력해주세요.</strong>
+						</div>
+					</div>
+					<div class="join1-middle flex column">
+						<div>
+							<p>회원정보</p>
+						</div>
+						회원가입을 축하합니다.
+					</div>
+				</div>			
+			</div>			
+		</div>			
+	</main>
+	<footer>
+		<th:block th:insert="~{/common/common::footer}"/>	
+	</footer>
+</body>
+</html>

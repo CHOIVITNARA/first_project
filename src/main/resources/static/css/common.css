@@ -5,7 +5,7 @@ ul, li{list-style:none; color: #333;}
 a{text-decoration: none; color: #333;}
 span{color: #333333;}
 body{font-family: 'Noto Sans KR', sans-serif, system-ui;}
-input{outline: 0;}
+input, select{outline: 0;}
 
 
 .cmargin{margin: auto 0;}
