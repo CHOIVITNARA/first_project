@@ -3,12 +3,11 @@
 <head>
 	<th:block th:insert="~{/common/common::head}"/>
 	<link rel="stylesheet" href="/css/main.css">
-	<script src="main.js"></script>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<script type="text/javascript">
 		$(function(){
-			$(".package-tap").click(function(){
+			/* $(".package-tap").click(function(){
 				$(".main-top-right-bottom-first").show();
 				$(".main-top-right-bottom-second").hide();
 				$(".main-top-right-bottom-third").hide();
@@ -40,7 +39,7 @@
 			
 			$(function () {
 				  $('.datepicker').datepicker();
-				});
+				}); */
 		});
 		
 		/* $(function(){
@@ -65,8 +64,9 @@
 							<div class="wrap">
 								<div class="flex">
 									<p sec:authorize="isAnonymous()">고객</p>
-									<input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}"/>
-									<p sec:authentication=principal.name></p>
+									<div sec:authorize="isAuthenticated()">
+										<p sec:authentication=principal.name></p>
+									</div>
 									<p>님,</p>
 								</div>
 								<p class="flex"><br>어떤 여행을 꿈꾸시나요?</p>
@@ -375,32 +375,33 @@
 								</div>					
 							</div>
 						</div>
+						<script src="/js/main.js"></script>
 						<div class="main-top-left">
 							<div class="container">
 								<ul class="flex slides">
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_1.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_1.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_2.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_2.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_3.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_3.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_4.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_4.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_5.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_5.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_6.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_6.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_7.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_7.jpeg"></a>
 									</li>
 									<li>
-										<a href="#" style="background-image: url('/img/index/main_image_8.jpeg')"></a>
+										<a href="#"><img src="/img/index/main_image_8.jpeg"></a>
 									</li>
 								</ul>
 								<div class="img-con">
@@ -410,13 +411,12 @@
 									<a href="#" class="next">
 										<span></span>
 									</a>
-									<a href="#">
+									<a href="#" class="stop">
 										<span></span>
 									</a>
 								</div>
 							</div>
 						</div>
-						<script src="main.js"></script>
 					</div>
 				</div>
 			</div>

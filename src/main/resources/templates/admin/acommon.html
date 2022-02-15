@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="head">
+	<th:block th:insert="~{/common/common::head}"/>
+	<link rel="stylesheet" href="/css/admin/acommon.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body th:fragment="main">
+	<nav>
+		<div class="wrap">
+			<section class="logoSection">
+				<h1>로고</h1>
+				<div>
+					<a href="/">
+						<img src="/img/common/vit-logo.pngvit-logo.png">
+					</a>
+				</div>				
+			</section>
+			<section class="underSection">
+				<div>
+					<h2>상품등록</h2>
+					<div>
+						<a href="/admin/travel">여행</a>
+					</div>
+				</div>
+				<div class="MainPage">
+					<h2>메인페이지</h2>
+					<div class="flex column">
+						<a href="/admin/main/line1">첫번째메인박스</a>
+						<a href="/admin/main/line2">두번째메인박스</a>
+						<a href="/admin/main/line3">세번째메인박스</a>
+					</div>
+				</div>
+				<div class="helpPage">
+					<h2>고객센터</h2>
+					<div class="flex column">
+						<a href="/admin/helpNotice">공지사항</a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</nav>
+	<div>
+	
+	</div>
+</body>
+</html>

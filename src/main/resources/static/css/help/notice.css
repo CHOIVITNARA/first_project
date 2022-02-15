@@ -1,0 +1,35 @@
+@charset "UTF-8";
+main{
+	width: 1200px;
+	margin: 50px auto 0;
+	font-size: 15px;
+}
+
+.titZone{
+	height: 55px;
+}
+.titZone form>div{
+	margin-left: 8px;
+}
+table{
+	width: 100%;
+	border-top: 1px solid #999;
+}
+table tr th,td{
+	border-bottom: 1px solid #ddd;
+}
+table tr th{
+	background-color: #f7f7f7;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+table tr th:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+table tr td:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+.pagingZone{
+	margin-top: 15px;
+}

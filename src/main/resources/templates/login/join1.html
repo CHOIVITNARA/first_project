@@ -11,6 +11,68 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			console.log(value)
 			$("#id-input").val(value);
 		};
+		
+		$(function(){
+			$("#all-agree").click(function(){
+				if($("#all-agree").is(':checked')){
+					$(".join-chk").prop('checked',true);
+				}else{
+					$(".join-chk").prop('checked',false);
+				}
+			});
+			$(".join-chk").click(function(){
+				if($('input[class=join-chk]:checked').length==$((".join-chk").length)){
+					$("#all-agree").prop('checked',true);
+				}else{
+					$("#all-agree").prop('checked',false);
+				}
+			});
+		});
+		
+		$(function(){
+			$("#idCheck").click(function checkEmailAvailability() {
+		        userinput = $("#emailId").val()+"@"+$("#id-input").val();
+		        console.log(userinput);
+		        $.ajax({
+		          url: "/log/emailCheck",
+		          type: "post",
+
+		          data: {
+		            email: userinput,
+		          },
+
+		          success: function (result) {
+		            if(result == "red"){
+		              $("#errors").show();
+		              $("#idmsg").hide();
+		            } else{
+						$("#idmsg").show();
+						$("#errors").hide();
+		            }
+		          }
+		  		});
+			});
+		});
+		
+		$(function(){
+	        $("#em").focusout(emCheckRule); 
+		});
+			var pwRule = /^(?=.*[a-zA-Z0-9])(?=.*\W).{8,16}$/;
+			
+			function pwCheckRule() {
+		        userinput = $("#pw").val();
+		        if (pwRule.test(userinput) && !emptyCheck.test(userinput)) {
+		          $("#pw").css("border", "2px solid green");
+		          $("#pw").css("color", "green");
+		          $("#errors").text("");
+		          return true;
+		        } else {
+		          $("#pw").css("border", "2px solid red");
+		          $("#pw").css("color", "red");
+		          $("#errors").text("비밀번호 : 8~16자, 특수문자 최소 2개 포함");
+		          return false;
+		        }
+		      }
 	</script>
 </head>
 <body>
@@ -33,7 +95,6 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 							<p>회원정보</p>
 						</div>
 						<form class="join-form" action="/log/joinus" method="post">
-							<input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}"/>
 							<div>
 								<table>
 								<colgroup>
@@ -56,17 +117,19 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 										<th>아이디</th>
 										<td class="id-td">
 											<div>
-												<input name="emailId" class="input" type="text" placeholder="이메일 주소를 입력해 주세요." required/>
+												<input name="emailId" id="emailId" class="input" type="text" placeholder="이메일 주소를 입력해 주세요." required/>
 												<span>@</span>
-												<input name="emailSite" class="input" type="text" id="id-input" placeholder="직접입력" value="" required/>
-												<select id="email-choice" onchange="autoEmail(this.value);">
+												<input name="emailSite" class="input" type="text" id="id-input" placeholder="직접입력" value="" size="24" required/>
+												<select id="email-choice" onchange="autoEmail(this.value)">
 													<option	value="직접입력">직접입력</option>
 													<option value="naver.com">naver.com</option>
 													<option value="gmail.com">gmail.com</option>
 													<option value="hanatour.com">hanatour.com</option>
 													<option value="nate.com">nate.com</option>
 												</select><!-- 
-												 --><button type="button">중복여부 확인</button>
+												 --><button type="button" id="idCheck">중복여부 확인</button>
+												 <span hidden id="errors" style="color: red; font-size: 15px;">이미 사용중인 아이디(이메일)입니다.</span>
+												 <span hidden id="idmsg" style="color: green; font-size: 15px;">사용가능한 아이디 입니다.</span>
 											</div>
 											<p class="p">하나투어 닷컴 아이디는 이메일 형식입니다.</p>
 										</td>
@@ -84,17 +147,17 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 									<tr>
 										<th>생년월일</th>
 										<td>
-											<input name="birth" class="input" type="text" placeholder="생년월일을 입력해 주세요." required/>
+											<input name="birth" class="input" type="text" placeholder="생년월일을 8자리로 입력해 주세요." minlength="8" required/>
 										</td>
 									</tr>
 									<tr>
 										<th>비밀번호</th>
 										<td class="flex column pass-td">
 											<div>
-												<input class="one-input input" type="password" placeholder="비밀번호" required/>
+												<input class="one-input input" type="password" id="pw" placeholder="비밀번호" minlength="8" maxlength="16" required/>
 											</div>
 											<div>
-												<input name="password" class="input one-input" type="password" placeholder="비밀번호를 확인하기 위해 다시 입력해 주세요." required/>
+												<input name="password" class="input one-input" type="password" placeholder="비밀번호를 확인하기 위해 다시 입력해 주세요." minlength="8" maxlength="16" required/>
 											</div>
 											<div>
 												<p  class="p">
@@ -108,45 +171,45 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 							</div>
 							<div class="additional">
 								<div>
-									<input type="checkbox" id="all-agree">
+									<input hidden type="checkbox" id="all-agree">
 									<label for="all-agree">전체동의</label>
 								</div>
 								<div>
 									<div class="re-div">
-										<input type="checkbox" id="hana-agree" name="hanaAgree" required/>
+										<input hidden type="checkbox" id="hana-agree" name="hanaAgree" class="join-chk" required/>
 										<label for="hana-agree">
 											<span>하나투어 이용약관 동의</span>
 											<span>(필수)</span>
 										</label>
 									</div>
 									<div class="re-div">
-										<input type="checkbox" id="personal-agree" name="personalAgree" required/>
+										<input hidden type="checkbox" id="personal-agree" name="personalAgree" class="join-chk" required/>
 										<label for="personal-agree">
 											<span>개인정보 수집 및 이용에 대한 동의</span>
 											<span>(필수)</span>
 										</label>
 									</div>
 									<div class="re-div">
-										<input type="checkbox" id="personal-other-agree" name="personalOtherAgree" required/>
+										<input hidden type="checkbox" id="personal-other-agree" name="personalOtherAgree" class="join-chk" required/>
 										<label for="personal-other-agree">
 											<span>개인정보 제3자 제공에 대한 동의</span>
 											<span>(필수)</span>
 										</label>
 									</div>
 									<div>
-										<input type="checkbox" id="location-agree" name="locationAgree">
+										<input hidden type="checkbox" id="location-agree" name="locationAgree" class="join-chk">
 										<label for="location-agree">
 											<span>위치기반서비스 이용약관 동의 (선택)</span>
 										</label>
 									</div>
 									<div>
-										<input type="checkbox" id="marcketing-agree" name="marcketingAgree">
+										<input hidden type="checkbox" id="marcketing-agree" name="marcketingAgree" class="join-chk" >
 										<label for="marcketing-agree">
 											<span>마켓팅 활용 동의 (선택)</span>
 										</label>
 									</div>
 									<div>
-										<input type="checkbox" id="marcketing-other-agree" name="marcketingOtherAgree">
+										<input hidden type="checkbox" id="marcketing-other-agree" name="marcketingOtherAgree" class="join-chk" >
 										<label for="marcketing-other-agree">
 											<span>마켓팅목적 제3자 제공에 대한 동의 (선택)</span>
 										</label>

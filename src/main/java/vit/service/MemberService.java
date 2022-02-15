@@ -6,4 +6,6 @@ public interface MemberService {
 
 	String joinus(MemberSaveDto dto);
 
+	String idCheck(String email);
+
 }

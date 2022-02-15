@@ -42,6 +42,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				$("#selectEmail").show();
 			};
 		};
+		///////////로그인실패시/////////////
 	</script>
 </head>
 <body>
@@ -71,8 +72,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 										</ul>
 									</div>
 									<div class="login-form">
+										<div class="error" th:if="${param.error}" style="color:red">
+											[[${session["SPRING_SECURITY_LAST_EXCEPTION"].message }]]
+										</div>
 										<form action="/log/member" method="post">
-											<input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}"/>
 											<ul>
 												<li>
 													<input name="email" class="input" type="email" placeholder="아이디(이메일계정)">
@@ -98,8 +101,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 										<a href="/log/join"><span></span>회원가입</a>
 									</div>
 									<div class="social-login center">
-										<a href="#" style="background-image: url('/img/log/ico_sns01.png')"></a>
-										<a href="/oauth2/authorization/google" style="background-image: url('/img/log/ico_sns02.png')"></a>
+										<a href="/oauth2/authorization/naver" style="background-image: url('/img/log/ico_sns01.png')"></a>
+										<a href="/oauth2/authorization/google" style="background-image: url('/img/log/ico_sns04.png')"></a>
 										<a href="#" style="background-image: url('/img/log/ico_sns03.png')"></a>
 									</div>
 								</section>

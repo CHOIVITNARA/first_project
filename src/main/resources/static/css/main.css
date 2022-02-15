@@ -18,7 +18,7 @@ main>.wrap>div:first-child{
 	padding-top: 50px;
 }
 .main-top>.wrap{
-	margin: 75px 0 35px;
+	margin: 75px 0 74px;
 	position: relative;
 }
 .main-top>div p {
@@ -27,6 +27,7 @@ main>.wrap>div:first-child{
 }
 .main-top>div>p{
 	position: absolute;
+	top: 0;
 }
 .main-top-right div ul{
 	width: 330px;
@@ -37,9 +38,6 @@ main>.wrap>div:first-child{
 	width: 33.333333%;
 	text-align: center;
 	opacity: 0.5;
-}
-.main-top-right ul li a{
-	
 }
 .main-top-right div ul .main-top-right-choice{
 	font-weight: bold;
@@ -128,8 +126,6 @@ main>.wrap>div:first-child{
 }
 #package div span:nth-of-type(2) input[type="checkbox"]:checked+label span::before{
 	background-position: -42px -26px;
-}
-#airline{
 }
 #airline div div li{
 	width: 70px;
@@ -244,20 +240,24 @@ main>.wrap>div:first-child{
 	overflow: hidden;
 }
 .slides{
-	position: absolute; 
+	position: absolute;
 	left: 0; 
 	top: 0; 
-	width: 5920px;
+	width: 100%;
+	height: 100%;
 }
-.main-top-left div>ul>li>a{
-	display: inline-block;
-	width: 740px;
-	height: 610px;
+.slides>li>a{
+	width: 100%;
+	height: 100%;
+	text-align: center;
 }
 .img-con{
 	position: absolute;
 	top: 486px;
 	left: 84px;
+}
+.img-con a.disabled{
+	
 }
 .main-top-left div>a{
 	display: inline-block;

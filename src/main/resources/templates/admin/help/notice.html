@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<th:block th:insert="~{/admin/acommon::head}"/>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="/css/admin/notice.css">
+	</head>
+	<body>
+		<div class="wrap flex">
+			<nav>
+				<th:block th:insert="~{/admin/acommon::main}"/>
+			</nav>
+			<main>
+				<div class="wrap flex">
+					<section class="inner-main">
+						<div>
+							<div class="flex between titZone">
+								<h2>공지사항</h2>
+								<div class="flex">
+									<form>
+										<select class="select">
+											<option>제목</option>
+											<option>내용</option>
+											<option>제목/내용</option>
+										</select>
+										<input type="text" placeholder="검색어를 입력해주세요." class="input"/>
+										<button type="submit" class="button">검색</button>
+									</form>
+								</div>
+							</div>
+							<table>
+								<colgroup>
+									<col style="width: 10%">
+									<col style="width: 12%">
+									<col>
+									<col style="width: 13%">
+									<col style="width: 70px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>구분</th>
+										<th>제목</th>
+										<th>등록일</th>
+										<th>비고</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="dto : ${noticeList}">
+										<td>[[${dto.nno}]]</td>
+										<td>[[${dto.section}]]</td>
+										<td>
+											<a th:href="|/admin/noticeDetail/${dto.nno}|">
+												[[${dto.subject}]]
+											</a>
+										</td>
+										<td>[[${dto.createdDate}]]</td>
+										<td>
+											<a th:href="|/admin/noticeDelete/${dto.nno}|" class="button deleteButton">삭제</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="flex end writebutton">
+								<a href="/admin/noticeWrite" class="button">글쓰기</a>
+							</div>
+							<div class="flex center">
+								<div>
+									페이징처리구간	
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

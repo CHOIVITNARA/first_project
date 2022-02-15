@@ -229,4 +229,9 @@ main>.wrap>div{
 	margin: 0 10px;
 	height: 42px;
 	width: 42px;
+	background-size: contain;
+}
+.social-login>a:nth-last-child(2) {
+	border-radius: 50%;
+	border: 1px solid #cdcdcd;
 }

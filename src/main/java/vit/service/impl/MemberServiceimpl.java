@@ -38,5 +38,17 @@ public class MemberServiceimpl implements MemberService {
 		System.out.println(entity);
 		return "login/join2";
 	}
+
+	@Override
+	public String idCheck(String email) {
+        if (repository.findById(email).isPresent()) {
+            return "red";
+        } else {
+            return "green";
+        }
+    }
+
+	
+	
 	
 }

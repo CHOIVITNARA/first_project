@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.select{
+	height: 36px;
+	width: 140px;
+}
+.input{
+	height: 34px;
+}
+.n-tit{
+	font-size: 22px;
+	font-weight: 600;
+	color: #333;
+}
+.inner-main{
+	width: 1200px;
+	float: right;
+}
+.button{
+	background-color: #fff;
+	color: #5e2bb8;
+	line-height: 34px;
+	border: solid 1px #c2c2c2;
+	width: 90px;
+}
+nav>.wrap{
+	width: 150px;
+	font-size: 15px;
+	margin-right: 40px;
+}
+.p-tit{
+	font-size: 24px;
+	letter-spacing: -2px;
+	font-weight: 700;
+	border-bottom: 2px solid #111;
+	padding-bottom: 29px;
+	color: #111;
+}
+.p-list li{
+	border-bottom: 1px solid #ddd;
+	line-height: 50px;
+}
+.p-list li:last-child {
+	border-bottom: 1px solid #111;
+}
+table th, td{
+	padding: 15px;
+	text-align: center;
+}

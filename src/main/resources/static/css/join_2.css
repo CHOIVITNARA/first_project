@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.join1-middle{
+	align-items: center;
+	font-size: 20px;
+}
+.join1-middle>div>p{
+	color: #5e2bb8;
+	font-weight: 600;
+	font-size: 30px;
+}

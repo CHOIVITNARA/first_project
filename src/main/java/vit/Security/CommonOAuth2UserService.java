@@ -47,7 +47,9 @@ public class CommonOAuth2UserService extends DefaultOAuth2UserService{ //교재�
 			email=oauth2User.getAttribute("email");
 			name=oauth2User.getAttribute("name");
 		}else if(registrationId.equals("naver")) {
-			
+			Map<String, Object> result=oauth2User.getAttribute("response");
+			email=(String)result.get("email");
+			name=(String)result.get("name");
 		}
 		//이미 가입되어있는지 가입여부체크
 		Optional<MyUserDetails> socialCheck=memberEntityRepository.findById(email)

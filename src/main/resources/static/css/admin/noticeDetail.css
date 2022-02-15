@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.detail{
+	
+}
+.boardTit{
+	border-top: 1px solid #999;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #dadce1;
+    background-color: #fff;
+    position: relative;
+    line-height: 24px;
+}
+.boardTit div span{
+    font-size: 17px;
+}
+.titSection{
+	color: #5e2bb8
+}
+.titSubject{
+	margin-left: 10px;
+}
+.titDate{
+	vertical-align:middle;
+	font-size: 14px;
+}
+.boardCon{
+	border-bottom: 1px solid #dadce1;
+    padding: 25px 30px;
+    min-height: 400px;
+    line-height: 24px;
+}
+.boardButton{
+	margin-top: 30px;
+}
+.boardButton a{
+	line-height: 50px;
+}
+.boardButton a:not(:first-child){
+	margin-left: 10px;
+	background-color: #5b606e;
+	border-color: #5b606e; 
+}
+/* //////////////////////////수정페이지////////////////////////// */
+.detailEdit{
+	display: none;
+}
+#editCancel{
+	background-color: #5b606e;
+	border-color: #5b606e; 
+	line-height: 55px;
+}
+.EditButtonZone a:not(:first-child){
+	margin-left: 10px;
+}

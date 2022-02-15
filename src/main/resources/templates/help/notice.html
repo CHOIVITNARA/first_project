@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org/"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html>
 <head>
-	<th:block th:insert="~{/common/common::head}"/>
-	<link rel="stylesheet" href="/css/join_1.css">
+	<th:block th:insert="~{/help/hcommon::head}"/>
+	<link rel="stylesheet" href="/css/help/notice.css">
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<script type="text/javascript">
-		function autoEmail(value){
-			console.log(value)
-			$("#id-input").val(value);
-		};
-	</script>
 </head>
 <body>
 	<header>
 		<th:block th:insert="~{/common/common::header}"/>	
 	</header>
-	관리자 페이지입니다.
+	<main>
+		<div class="wrap flex">
+			<nav>
+				<th:block th:insert="~{/help/hcommon::nav}"/>
+			</nav>
+			<div class="flex">
+				<section class="inner-main">
+					<div class="wrap">
+						<div class="titZone flex between">
+							<div class="n-tit">
+								<p>공지사항</p>
+							</div>
+							<div>
+								<form class="searchZone flex">
+									<div>
+										<select class="select">
+											<option>제목</option>
+											<option>내용</option>
+											<option>제목/내용</option>
+										</select>
+									</div>
+									<div>
+										<input type="text" placeholder="검색어를 입력해주세요." class="input"/>
+									</div>
+									<div>
+										<button type="submit" class="button">검색</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<table>
+							<colgroup>
+								<col style="width: 10%">
+								<col style="width: 12%">
+								<col>
+								<col style="width: 13%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>번호</th>
+									<th>구분</th>
+									<th>제목</th>
+									<th>등록일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="dto : ${noticeList}">
+									<td>[[${dto.nno}]]</td>
+									<td>[[${dto.section}]]</td>
+									<td>
+										<a th:href="|/noticeDetail/${dto.nno}|">
+											[[${dto.subject}]]
+										</a>
+									</td>
+									<td>[[${dto.createdDate}]]</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="pagingZone">
+							<div class="flex center">
+								페이징처리구간	
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
 	<footer>
 		<th:block th:insert="~{/common/common::footer}"/>	
 	</footer>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<th:block th:insert="~{/help/hcommon::head}"/>
+	<link rel="stylesheet" href="/css/help/hnoticeDetail.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		$(function(){
+		    $("#content").resize(resizeContents);
+		    resizeContents();
+		});
+	</script>
+	<header>
+		<th:block th:insert="~{/common/common::header}"/>	
+	</header>
+	<main>
+		<div class="wrap flex center">
+			<div class="flex">
+				<div class="flex">
+					<section class="inner-main">
+						<div class="wrap">
+							<div class="titZone">
+								<div class="n-tit">
+									<p>공지사항</p>
+								</div>
+								<div class="detail">
+									<div class="boardTit flex between">
+										<div class="boardTitStart">
+											<span class="titSection">[[${noticeDetail.section}]]</span>
+											<span class="titSubject">[[${noticeDetail.subject}]]</span>
+										</div>
+										<div class="boardTitEnd">
+											<span class="titDate">[[${noticeDetail.createdDate}]]</span>
+										</div>
+									</div>
+									<div class="boardCon">
+										<div>
+											<span th:utext="${noticeDetail.content}" id="content"></span>
+										</div>
+									</div>
+									<div class="boardButton flex center">
+										<a href="/help/notice" class="button">목록</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<th:block th:insert="~{/common/common::footer}"/>	
+	</footer>
+</body>
+</html>

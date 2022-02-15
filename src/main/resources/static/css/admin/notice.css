@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.button{
+	height: 37px;
+	width: 100px;
+	background-color: #fff;
+	color: #5e2bb8;
+	line-height: 36px;
+	border: 1px solid #cdcdcd;
+}
+main{
+	width: 1000px;
+}
+main>.wrap{
+	margin: 50px;
+	width: 100%;
+}
+.inner-main{
+	width: 100%;
+}
+.titZone{
+	height: 55px;
+}
+table{
+	width: 100%;
+}
+table tr th{
+	background-color: #f7f7f7;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+.writebutton a{
+	text-align: center;
+	line-height: 38px;
+}
+.deleteButton{
+	display: inline-block;
+	color: #fff;
+	background-color: #5e2bb8;
+	height: 37px;
+	width: 70px;
+	line-height: 37px;
+	border-radius: 2px;
+}

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+table th, td {
+	text-align: left;
+}
 .a{
 	display: block;
 	width: 330px;
@@ -61,9 +64,7 @@ main>.wrap>div {
 colgroup{
 	display: table-column-group;
 }
-col{
-	display: table-column;
-}
+
 table{
 	margin-top: 4px;
 	width: 920px;
@@ -193,8 +194,30 @@ form>div button{
 	color: #fff;
 }
 /* ////////////////동의란////////////////// */
+.additional>div{
+	position: relative;
+	line-height: 30px;
+}
+.additional>div label{
+	padding-left: 30px;
+}
 .additional>div>div{
-	display: relative;
+	position: relative;
+	line-height: 30px;
+}
+.additional div label:before{
+	content: '';
+	background-image: url('/img/log/ico_check.png');
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	left: 0px;
+	top: 2px;
+}
+.additional div input:checked+label:before{
+	background-image: url('/img/log/ico_check_after.png')
 }
 .additional div div label:before{
 	content: '';
@@ -204,8 +227,11 @@ form>div button{
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	position: absolute;
-	left: -8px;
-	top: -2px;
+	left: 0px;
+	top: 2px;
+}
+.additional div div label{
+	padding-left: 30px;
 }
 .additional div div input:checked+label:before{
 	background-image: url('/img/log/ico_check_after.png')

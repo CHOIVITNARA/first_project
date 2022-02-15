@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.input{
+	height: 52px;
+	font-size: 14px;
+	color: #333;
+	outline: none;
+	border: 1px solid #cdcdcd;
+	background-color: #fff;
+	padding: 0 30px 0 15px;
+	line-height: 50px;
+	border-radius: 2px;
+	width: 325px;
+}
+.miniInput{
+	width: 105px;
+}
+.button{
+	height: 46px;
+	width: 140px;
+}
+.t-tit{
+	margin-bottom: 20px;
+}
+table{
+	width: 1010px;
+}
+colgroup{
+	display: table-column-group;
+	table-layout: fixed;
+}
+col{
+	display: table-column;
+}
+table tr{
+	width: 1010px;
+	display: table-row;
+	font-size: 17px;
+}
+table tr td{
+	text-align: left;
+	width: 100%;
+}
+table tr th, td{
+	border-top: 1px solid #cdcdcd;
+	border-bottom: 1px solid #000;
+}
+.submitZone{
+	margin-top: 20px;
+	text-align: center;
+}

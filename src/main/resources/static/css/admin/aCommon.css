@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.input{
+	height: 35px;
+	width: 200px;
+	font-size: 14px;
+	color: #333;
+	outline: none;
+	border: 1px solid #cdcdcd;
+	background-color: #fff;
+	padding: 0 30px 0 15px;
+	line-height: 33px;
+	border-radius: 2px;
+}
+.select{
+	height: 35px;
+	width: 100px;
+	font-size: 14px;
+	color: #333;
+	outline: none;
+	border: 1px solid #cdcdcd;
+	line-height: 33px;
+	border-radius: 2px;
+	text-align: center;
+}
+.a{
+	align-self: center;
+	font-size: 14px;
+}
+.textarea{
+	font-size: 14px;
+	color: #333;
+	outline: none;
+	border: 1px solid #cdcdcd;
+	background-color: #fff;
+	padding: 10px 15px;
+	line-height: 33px;
+	border-radius: 2px;
+}
+.button{
+	width: 250px;
+	font-size: 14px;
+	outline: none;
+	border: 1px solid #5e2bb8;
+	background-color: #5e2bb8;
+	line-height: 33px;
+	border-radius: 2px;
+	color: #fff;
+	text-align: center;
+}
+nav{
+	display: inline-block;
+	width: 250px;
+	height: 100vw;
+	color: #5e2bb8;
+	border-right: 3px solid #5e2bb8;
+	box-shadow: 0 2px 4px 0 rgb(197 197 197 / 50%);
+}
+nav a{
+	color: #333;
+}
+.logoSection{
+	background-color: #fff;
+	padding: 20px 0 15px;
+}
+.logoSection>div{
+	text-align: center;
+}
+.underSection{
+	margin: 0 20px 10px;
+}
+.underSection>div{
+	margin: 10px 0;
+}
+.underSection>div a{
+	margin-left: 10px;
+}
+main>.wrap{
+	width: 1010px;
+	margin: 50px;
+}

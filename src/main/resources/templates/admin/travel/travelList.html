@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<th:block th:insert="~{/admin/acommon::head}"/>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="/css/admin/travelList.css">
+	</head>
+	<body>
+		<div class="wrap flex">
+			<nav>
+				<th:block th:insert="~{/admin/acommon::main}"/>
+			</nav>
+			<main>
+				<div class="wrap">
+					<div  class="t-tit">
+						<h2>여행상품</h2>
+					</div>
+					<div>
+						<table>
+						<colgroup>
+							<col style="width: 15%;">
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col style="width: 70px;">
+						</colgroup>
+							<thead>
+								<tr>
+									<th>번호</th>
+									<th>상품코드</th>
+									<th>대표이미지</th>
+									<th>제목</th>
+									<th>서브</th>
+									<th>태그</th>
+									<th>가격</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>번호</td>
+									<td>상품코드</td>
+									<td>대표이미지</td>
+									<td>제목</td>
+									<td>서브</td>
+									<td>태그</td>
+									<td>가격</td>
+									<td>
+										<a href="#" class="button">삭제</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="flex end writebutton">
+							<a href="/admin/travelWrite" class="button sidebutton">글쓰기</a>
+						</div>
+						<div class="flex center">
+							<div>
+								페이징처리구간	
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<th:block th:insert="~{/admin/acommon::head}"/>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="/css/admin/travelWrite.css">
+	</head>
+	<body>
+		<div class="wrap flex">
+			<nav>
+				<th:block th:insert="~{/admin/acommon::main}"/>
+			</nav>
+			<main>
+				<div class="wrap">
+					<div class="m-tit">
+						<h2>여행상품</h2>
+					</div>
+					<form action="/admin/travelWrite" method="post" enctype="multipart/form-data">
+						<table>
+						<colgroup>
+							<col style="width: 30%;">
+							<col>
+						</colgroup>
+							<tr>
+								<th>여행제목</th>
+								<td>
+									<input type="text" name="travelName" class="input"/>					
+								</td>
+							</tr>
+							<tr>
+								<th>여행서브제목</th>
+								<td>
+									<input type="text" name="subName" class="input"/>					
+								</td>	
+							</tr>
+							<tr>
+								<th>성인가격</th>
+								<td>
+									<input type="text" name="adultPrice" class="input"/>					
+								</td>
+							</tr>
+							<tr>
+								<th>아동가격</th>
+								<td>
+									<input type="text" name="childPrice" class="input"/>					
+								</td>
+							</tr>
+							<tr>
+								<th>유아가격</th>
+								<td>
+									<input type="text" name="indfantPrice" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>여행시작일</th>
+								<td class="flex">
+									<div>
+										<input type="text" name="sYear" maxlength="4" minlength="4" class="input miniInput"/>
+									</div>
+									<div>
+										<input type="text" name="sMonth" maxlength="2" minlength="2" class="input miniInput"/>
+									</div>
+									<div>
+										<input type="text" name="sDay" maxlength="2" minlength="2" class="input miniInput"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>여행종료일</th>
+								<td class="flex">
+									<div>
+										<input type="text" name="eYear" maxlength="4" minlength="4" class="input miniInput"/>
+									</div>
+									<div>
+										<input type="text" name="eMonth" maxlength="2" minlength="2" class="input miniInput"/>
+									</div>
+									<div>
+										<input type="text" name="eDay" maxlength="2" minlength="2" class="input miniInput"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>여행태그</th>
+								<td>
+									<input type="text" name="tag" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>항공이름</th>
+								<td>
+									<input type="text" name="airplaneName" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>항공번호</th>
+								<td>
+									<input type="text" name="airplaneNumber" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>가능인원</th>
+								<td>
+									<input type="text" name="availableNumber" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>최소가능인원</th>
+								<td>
+									<input type="text" name="leastavailableNumber" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>호텔등급</th>
+								<td>
+									<input type="text" name="hotelGrade" class="input"/>
+								</td>
+							</tr>
+							<tr>
+								<th>카테고리</th>
+								<td class="flex">
+									<div>
+										<input type="checkbox" id="airplane" name="airplane"/>
+										<label for="airplane">항공포함</label>
+									</div>
+									<div>
+										<input type="checkbox" id="noairplane" name="noairplane"/>
+										<label for="noairplane">항공불포함</label>
+									</div>
+									<div>
+										<input type="checkbox" id="onlyUsTour" name="onlyUsTour"/>
+										<label for="onlyUsTour">우리끼리여행</label>
+									</div>
+									<div>
+										<input type="checkbox" id="groupTour" name="groupTour"/>
+										<label for="groupTour">단체여행</label>
+									</div>
+									<div>
+										<input type="checkbox" id="noshopping" name="noshopping"/>
+										<label for="noshopping">쇼핑불포함</label>
+									</div>
+									<div>
+										<input type="checkbox" id="global" name="global"/>
+										<label for="global">해외여행</label>
+									</div>	
+								</td>
+							</tr>
+							<tr>
+								<th>이미지</th>
+								<td>
+									<input type="file" name="file" multiple/>
+								</td>
+							</tr>
+						</table>
+						<div class="submitZone">
+							<button type="submit" class="button">등록</button>
+						</div>
+					</form>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
