@@ -3,6 +3,7 @@ package vit.service.impl;
 import java.io.File;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,18 +66,11 @@ public class AdminServiceImpl implements AdminService {
 	
 	//수정
 	@Override
-	public void noticeUpdate(NoticeSaveDto dto, Principal principal) {
+	public void noticeUpdate(Long nno, NoticeSaveDto dto, Principal principal) {
+		NoticeEntity result=noticeEntityRepository.findById(nno).orElseThrow();
+		result.updateDetail(dto);
 		
-		NoticeEntity entity=NoticeEntity.builder()
-				.nno(dto.getNno())
-				.section(dto.getSection())
-				.subject(dto.getSubject())
-				.content(dto.getContent())
-				.memberEntity(MemberEntity.builder().name(principal.getName()).build())
-				.build();
-		
-		noticeEntityRepository.save(entity);
-		
+		noticeEntityRepository.save(result);
 	}
 		
 	@Override

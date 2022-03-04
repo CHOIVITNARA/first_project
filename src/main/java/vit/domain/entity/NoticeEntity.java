@@ -2,8 +2,10 @@ package vit.domain.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,6 +22,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import vit.domain.dto.NoticeSaveDto;
 
 @Getter
 @AllArgsConstructor
@@ -38,7 +41,14 @@ public class NoticeEntity extends BaseEntity{
 	@Column(nullable=false)
 	private String content;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "name")
 	private MemberEntity memberEntity;
+	
+	public NoticeEntity updateDetail(NoticeSaveDto dto) {
+		this.section=dto.getSection();
+		this.subject=dto.getSubject();
+		this.content=dto.getContent();
+		return this;
+	}
 }

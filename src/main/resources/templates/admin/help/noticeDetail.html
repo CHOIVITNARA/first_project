@@ -82,7 +82,8 @@
 						</div>
 					</div>
 					<div class="detailEdit">
-						<form action="/admin/noticeUpdate/${noticeDetail.nno}" method="post" class="flex column">
+						<form th:action="|/admin/noticeUpdate/${noticeDetail.nno}|" method="post" class="flex column">
+							<input type="hidden" name="_method" value="put">
 							<div class="wrap flex">
 								<select	name="section" class="select" th:value="${noticeDetail.section}">
 									<option th:selected="${noticeDetail.section}=='일반'">일반</option>

@@ -20,6 +20,6 @@ public interface AdminService {
 
 	void travelSave(TravelSaveDto dto, MultipartFile file) throws Exception;
 
-	void noticeUpdate(NoticeSaveDto dto, Principal principal);
+	void noticeUpdate(Long nno, NoticeSaveDto dto, Principal principal);
 
 }

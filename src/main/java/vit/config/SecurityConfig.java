@@ -12,6 +12,7 @@ import org.springframework.security.config.oauth2.client.CommonOAuth2Provider;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 import lombok.RequiredArgsConstructor;
 import vit.Security.CommonOAuth2UserService;
@@ -62,5 +63,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 
-	
+	@Bean
+    public HiddenHttpMethodFilter httpMethodFilter() {
+        HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
+        return hiddenHttpMethodFilter;
+    }
+
 }

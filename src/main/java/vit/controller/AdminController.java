@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import vit.domain.dto.NoticeSaveDto;
@@ -50,6 +53,7 @@ public class AdminController {
 		service.noticeDelete(nno);
 		return "redirect:/admin/helpNotice";
 	}
+	
 	@GetMapping("/admin/main/line1")
 	public String main1UploadPage(){
 		return "admin/main/line1";
@@ -76,9 +80,9 @@ public class AdminController {
 		service.travelSave(dto, file);
 		return "admin/travel/travelWrite";
 	}
-	@PostMapping("/admin/noticeUpdate/{nno}")
-	public String noticeDetailPage(NoticeSaveDto dto, Principal principal){
-		service.noticeUpdate(dto, principal);
-		return "admin/help/noticeDetail";
+	@PutMapping("/admin/noticeUpdate/{nno}")
+	public String noticeUpdate(@PathVariable long nno, NoticeSaveDto dto, Principal principal){
+		service.noticeUpdate(nno, dto, principal);
+		return "redirect:/admin/noticeDetail/{nno}";
 	}
 }
